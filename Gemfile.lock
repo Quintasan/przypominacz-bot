@@ -157,6 +157,8 @@ GEM
       pastel (~> 0.8)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    tzinfo-data (1.2023.3)
+      tzinfo (>= 1.0.0)
     uber (0.1.0)
     unf (0.1.4)
       unf_ext
@@ -181,6 +183,7 @@ DEPENDENCIES
   sequel
   sqlite3
   tty-logger
+  tzinfo-data
 
 RUBY VERSION
    ruby 3.2.2p53

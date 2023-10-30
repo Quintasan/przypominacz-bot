@@ -11,6 +11,7 @@ gem 'rufus-scheduler'
 gem 'sequel'
 gem 'sqlite3'
 gem 'tty-logger'
+gem 'tzinfo-data'
 
 group :development do
   gem 'pry-byebug'
