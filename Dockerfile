@@ -12,8 +12,8 @@ FROM base
 COPY --from=build /app /app
 RUN addgroup app && \
     adduser app --home /app --shell /bin/bash --ingroup app --disabled-password && \
-    chown -R app:app /app && \
-    mkdir -p /app/data
+    mkdir -p /app/data && \
+    chown -R app:app /app
 VOLUME /app/data
 USER app
 CMD ["ruby", "main.rb"]
