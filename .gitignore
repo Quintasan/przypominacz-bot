@@ -1,3 +1,4 @@
+compose.override.yml
 google-api-credentials.json
 .reminders.db
 .env
