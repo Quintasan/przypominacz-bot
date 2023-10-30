@@ -12,6 +12,7 @@ FROM base
 COPY --from=build /app /app
 RUN addgroup app && \
     adduser app --home /app --shell /bin/bash --ingroup app --disabled-password && \
+    apk add --no-cache alpine-conf && setup-timezone -z Europe/Warsaw && \
     mkdir -p /app/data && \
     chown -R app:app /app
 VOLUME /app/data
