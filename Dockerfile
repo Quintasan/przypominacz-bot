@@ -15,5 +15,6 @@ RUN addgroup app && \
     mkdir -p /app/data && \
     chown -R app:app /app
 VOLUME /app/data
+ENV TZ="Europe/Warsaw"
 USER app
 CMD ["ruby", "main.rb"]
