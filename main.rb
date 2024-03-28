@@ -18,11 +18,12 @@ DB.loggers << LOGGER
 require_relative('models')
 
 bot = Discordrb::Bot.new(token: PRZYPOMINACZ_TOKEN, fancy_log: true)
-bot.register_application_command(:create_section, "Tworzy rolę, kategorię i kanały dla strefy", server_id: SERVER_ID) do |cmd|
+bot.register_application_command(:create_section, 'Tworzy rolę, kategorię i kanały dla strefy',
+                                 server_id: SERVER_ID) do |cmd|
   cmd.string('section_name', 'Nazwa strefy', required: true)
 end
 bot.application_command(:create_section) do |event|
-  event.respond(content: "On it sir!", ephemeral: true)
+  event.respond(content: 'On it sir!', ephemeral: true)
 
   section_name = event.options['section_name']
   server = event.channel.server
@@ -30,11 +31,11 @@ bot.application_command(:create_section) do |event|
   LOGGER.info "Creating role #{section_name}"
   role = server.create_role(name: section_name)
 
-  allow_role_to_communicate = Discordrb::Permissions.new [:read_messages, :send_messages, :connect, :speak]
+  allow_role_to_communicate = Discordrb::Permissions.new %i[read_messages send_messages connect speak]
   add_role_to_category = Discordrb::Overwrite.new(role, allow: allow_role_to_communicate)
 
-  deny_everyone = Discordrb::Permissions.new [:read_messages, :connect]
-  private_category = Discordrb::Overwrite.new(SERVER_ID, type: "role", deny: deny_everyone)
+  deny_everyone = Discordrb::Permissions.new %i[read_messages connect]
+  private_category = Discordrb::Overwrite.new(SERVER_ID, type: 'role', deny: deny_everyone)
 
   LOGGER.info "Creating category #{section_name}"
   category = server.create_channel(section_name, 4, permission_overwrites: [private_category, add_role_to_category])
