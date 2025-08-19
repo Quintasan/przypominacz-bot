@@ -12,8 +12,10 @@ gem 'sequel'
 gem 'sqlite3'
 gem 'tty-logger'
 gem 'tzinfo-data'
+gem 'reline'
 
 group :development do
   gem 'pry-byebug'
   gem 'rubocop'
+  gem 'irb'
 end
