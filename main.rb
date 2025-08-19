@@ -40,7 +40,7 @@ bot.application_command(:create_section) do |event|
   LOGGER.info "Creating category #{section_name}"
   category = server.create_channel(section_name, 4, permission_overwrites: [private_category, add_role_to_category])
 
-  text_channels = %w[ogłoszenia-org ogólny pomysły do-orgów voicespam]
+  text_channels = %w[ogłoszenia-org ogólny]
   text_channels.each do |channel_name|
     LOGGER.info "Creating text channel #{channel_name}"
     server.create_channel(channel_name, parent: category)
