@@ -123,49 +123,56 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     retriable (3.1.2)
-    rexml (3.2.6)
-    rubocop (1.62.1)
+    rexml (3.4.1)
+    rubocop (1.79.2)
       json (~> 2.3)
-      language_server-protocol (>= 3.17.0)
+      language_server-protocol (~> 3.17.0.2)
+      lint_roller (~> 1.1.0)
       parallel (~> 1.10)
       parser (>= 3.3.0.2)
       rainbow (>= 2.2.2, < 4.0)
-      regexp_parser (>= 1.8, < 3.0)
-      rexml (>= 3.2.5, < 4.0)
-      rubocop-ast (>= 1.31.1, < 2.0)
+      regexp_parser (>= 2.9.3, < 3.0)
+      rubocop-ast (>= 1.46.0, < 2.0)
       ruby-progressbar (~> 1.7)
-      unicode-display_width (>= 2.4.0, < 3.0)
-    rubocop-ast (1.31.2)
-      parser (>= 3.3.0.4)
+      unicode-display_width (>= 2.4.0, < 4.0)
+    rubocop-ast (1.46.0)
+      parser (>= 3.3.7.2)
+      prism (~> 1.4)
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
-    rufus-scheduler (3.9.1)
-      fugit (~> 1.1, >= 1.1.6)
-    sequel (5.78.0)
+    rufus-scheduler (3.9.2)
+      fugit (~> 1.1, >= 1.11.1)
+    sequel (5.95.1)
       bigdecimal
-    signet (0.19.0)
+    signet (0.20.0)
       addressable (~> 2.8)
       faraday (>= 0.17.5, < 3.a)
       jwt (>= 1.5, < 3.0)
       multi_json (~> 1.10)
-    sqlite3 (1.7.3-x86_64-linux)
+    sqlite3 (2.7.3-x86_64-linux-gnu)
+    sqlite3 (2.7.3-x86_64-linux-musl)
     trailblazer-option (0.1.2)
     tty-color (0.6.0)
     tty-logger (0.6.0)
       pastel (~> 0.8)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-    tzinfo-data (1.2024.1)
+    tzinfo-data (1.2025.2)
       tzinfo (>= 1.0.0)
     uber (0.1.0)
-    unicode-display_width (2.5.0)
-    websocket (1.2.10)
-    websocket-client-simple (0.8.0)
+    unicode-display_width (3.1.5)
+      unicode-emoji (~> 4.0, >= 4.0.4)
+    unicode-emoji (4.0.4)
+    websocket (1.2.11)
+    websocket-client-simple (0.9.0)
+      base64
       event_emitter
+      mutex_m
       websocket
 
 PLATFORMS
   x86_64-linux
+  x86_64-linux-musl
 
 DEPENDENCIES
   discordrb
@@ -180,7 +187,7 @@ DEPENDENCIES
   tzinfo-data
 
 RUBY VERSION
-   ruby 3.2.2p53
+   ruby 3.4.5p51
 
 BUNDLED WITH
-   2.4.20
+   2.6.9
